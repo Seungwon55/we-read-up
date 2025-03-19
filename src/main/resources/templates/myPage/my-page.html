@@ -29,21 +29,30 @@
             </div>
 
             <div class="dashboard">
-                <div class="dashboard-item">
-                    <div class="icon"><img src="/img/money-icon.png" alt="적립금"></div>
-                    <p class="amount">0원</p>
-                    <p class="label">적립금</p>
+                <div class="dashboard-user">
+                    <div class="user-icon"><img src="https://img.echosting.cafe24.com/skin/base_ko_KR/member/img_member_default.gif" alt="사용자"></div>
+                    <div class="user-info">
+                        <p class="user-name">안녕하세요. 홍길동 님!</p>
+                        <p class="user-grade">고객님의 회원등급은 <span class="grade">일반회원</span> 입니다.</p>
+                    </div>
                 </div>
-                <a href="/myPage/couponList" class="dashboard-item">
-                    <div class="icon"><img src="/img/coupon-icon.png" alt="쿠폰"></div>
-                    <p class="amount">0개</p>
-                    <p class="label">쿠폰</p>
-                </a>
-                <a href="/myPage/orderList" class="dashboard-item">
-                    <div class="icon"><img src="/img/order-icon.png" alt="주문"></div>
-                    <p class="amount">0원 (0회)</p>
-                    <p class="label">주문</p>
-                </a>
+                <div class="dashboard-items">
+                    <div class="dashboard-item">
+                        <div class="icon"><img src="/img/money-icon.png" alt="총적립금"></div>
+                        <p class="amount">0원</p>
+                        <p class="label">총적립금</p>
+                    </div>
+                    <a href="/myPage/couponList" class="dashboard-item">
+                        <div class="icon"><img src="/img/coupon-icon.png" alt="쿠폰"></div>
+                        <p class="amount">1개</p>
+                        <p class="label">쿠폰</p>
+                    </a>
+                    <a href="/myPage/orderList" class="dashboard-item">
+                        <div class="icon"><img src="/img/order-icon.png" alt="총주문"></div>
+                        <p class="amount">0원 (0회)</p>
+                        <p class="label">총주문</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -83,24 +92,6 @@
             <a href="#">취소: <strong>0</strong></a>
             <a href="#">교환: <strong>0</strong></a>
             <a href="#">반품: <strong>0</strong></a>
-        </div>
-
-        <h3>주문내역 조회</h3>
-        <div class="order-history">
-            <div class="no-orders">
-                <img src="icons/empty.png" alt="주문 없음">
-                <p>주문 내역이 없습니다.</p>
-            </div>
-        </div>
-
-        <div>
-            <form class="howtopag" action="/board/list" method="get">
-                <button type="submit" name="page">❮❮</button>
-                <button type="submit" name="page">❮</button>
-                <button type="submit" name="page">num</button>
-                <button type="submit" name="page">❯</button>
-                <button type="submit" name="page">❯❯</button>
-            </form>
         </div>
     </main>
 </div>
