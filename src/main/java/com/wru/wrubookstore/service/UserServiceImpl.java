@@ -40,6 +40,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDto login(String email, String password) {
+        UserDto userDto;
+        try {
+            userDto = userRepository.selectByEmailAndPassword(email.trim(), password.trim());
+        } catch (Exception e) {
+            return null;
+        }
+        return userDto;
+    }
+
+    @Override
     public int update(UserDto userDto) throws Exception {
         return userRepository.update(userDto);
     }

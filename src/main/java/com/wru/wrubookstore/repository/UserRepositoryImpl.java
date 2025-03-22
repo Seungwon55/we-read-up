@@ -4,7 +4,9 @@ import com.wru.wrubookstore.dto.UserDto;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
@@ -39,6 +41,14 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public UserDto select(String email) throws Exception {
         return session.selectOne(namespace+"select", email);
+    }
+
+    @Override
+    public UserDto selectByEmailAndPassword(String email, String password) throws Exception {
+        Map<String, String> map = new HashMap<>();
+        map.put("email", email);
+        map.put("password", password);
+        return session.selectOne(namespace+"selectByEmailAndPassword", map);
     }
 
     @Override

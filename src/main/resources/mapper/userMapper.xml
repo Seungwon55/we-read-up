@@ -36,6 +36,13 @@
         WHERE email = #{email} AND is_member = 0
     </select>
 
+    <!-- 이메일과 비밀번호로 특정 비회원 조회 -->
+    <select id="selectByEmailAndPassword" parameterType="map" resultType="UserDto">
+        SELECT user_id, user_status_id, email, password, name, is_member
+        FROM user
+        WHERE email = #{email} AND password = #{password}
+    </select>
+
     <!-- 특정 비회원의 비밀번호 변경 -->
     <update id="update" parameterType="UserDto">
         UPDATE user

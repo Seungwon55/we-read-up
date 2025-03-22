@@ -11,6 +11,7 @@ public interface UserService {
     void deleteAll() throws Exception;
     int insert(UserDto userDto) throws Exception;
     UserDto select(String email) throws Exception;
+    UserDto login(String email, String password);
     int update(UserDto userDto) throws Exception;
     int delete(String email) throws Exception;
 
