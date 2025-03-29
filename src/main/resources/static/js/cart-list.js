@@ -15,6 +15,7 @@ document.querySelector(".order-btn").addEventListener("click", function () {
     document.querySelectorAll(".cart-item").forEach(item => {
         const checkbox = item.querySelector(".select-item");
         if (checkbox.checked) {
+            const cartId = item.getAttribute("data-cart-id")
             const bookId = item.getAttribute("data-book-id");
             const salePrice = item.getAttribute("data-sale-price");
             const image = item.getAttribute("data-image");
@@ -22,6 +23,7 @@ document.querySelector(".order-btn").addEventListener("click", function () {
             const quantity = item.getAttribute("data-quantity");
 
             selectedItems.push({
+                cartId,
                 bookId,
                 salePrice,
                 image,
@@ -41,6 +43,7 @@ document.querySelector(".order-btn").addEventListener("click", function () {
     form.action = "/orderForm";
 
     selectedItems.forEach((item, index) => {
+        form.appendChild(makeHiddenInput(`orderBookRequestList[${index}].cartId`, item.cartId));
         form.appendChild(makeHiddenInput(`orderBookRequestList[${index}].bookId`, item.bookId));
         form.appendChild(makeHiddenInput(`orderBookRequestList[${index}].image`, item.image));
         form.appendChild(makeHiddenInput(`orderBookRequestList[${index}].name`, item.name));

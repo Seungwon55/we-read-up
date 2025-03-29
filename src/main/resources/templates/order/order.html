@@ -84,6 +84,7 @@
                 <input type="hidden" th:name="|orderBookDtoList[${stat.index}].bookId|" th:value="${orderBookRequest.bookId}">
                 <input type="hidden" th:name="|orderBookDtoList[${stat.index}].quantity|" th:value="${orderBookRequest.quantity}">
                 <input type="hidden" th:name="|orderBookDtoList[${stat.index}].price|" th:value="${orderBookRequest.orderPrice}">
+                <input type="hidden" th:name="|orderBookDtoList[${stat.index}].cartId|" th:value="${orderBookRequest.cartId}">
             </div>
 
             <!-- 배송비 -->
@@ -177,6 +178,7 @@
             <button type="submit" class="submit-btn">
                 <span id="paymentPrice">10,000원</span> 결제하기
             </button>
+            <input type="hidden" name="cartListResponse" id="cartListResponse"/>
         </div>
 
     </section>

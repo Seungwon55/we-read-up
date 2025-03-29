@@ -8,6 +8,7 @@ import lombok.ToString;
 @ToString
 public class OrderBookRequest {
 
+    private Integer cartId;
     private Integer bookId;
     private String image;   // 책 이미지
     private String name;    // 책 이름
@@ -18,7 +19,8 @@ public class OrderBookRequest {
 
     }
 
-    public OrderBookRequest(Integer bookId, String image, String name, int orderPrice, int quantity) {
+    public OrderBookRequest(Integer cartId, Integer bookId, String image, String name, int orderPrice, int quantity) {
+        this.cartId = cartId;
         this.bookId = bookId;
         this.image = image;
         this.name = name;

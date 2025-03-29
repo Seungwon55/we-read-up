@@ -106,11 +106,16 @@
             <span class="summary-value total-price" id="total-price"></span>
         </div>
         <button type="submit" class="order-btn">주문하기</button>
+        <input type="hidden" th:value="${list}" name="cartId" id="cartId" class="cartId">
+
+
     </div>
 </main>
 
 <div th:replace="~{fragments/footer :: footer}"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/js/cart-list.js"></script>
+
 </body>
 </html>
